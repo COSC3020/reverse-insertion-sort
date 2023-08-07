@@ -7,5 +7,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run test
-        run: npm i jsverify
-        run: node code.test.js
+      - run: npm i jsverify
+      - run: node code.test.js
