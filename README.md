@@ -22,7 +22,8 @@ array of numbers and checks that it is sorted afterwards.
 Now change the function such that it works from the end of the array rather than
 the beginning, `insertionSortReverse()` -- only the direction of
 iterating over the elements is reversed, the array is still sorted the same way
-(ascending). Test your new function.
+(ascending). Test your new function; I've provided some basic testing code that
+uses [jsverify](https://jsverify.github.io/).
 
 ## Average-Case Time Complexity of Insertion Sort
 
