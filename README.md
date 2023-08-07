@@ -2,7 +2,7 @@
 
 Consider the code for insertion sort we covered in class:
 
-```
+```javascript
 function insertionSort(arr) {
   for(var i = 1; i < arr.length; i++) {
     var val = arr[i];
