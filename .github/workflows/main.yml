@@ -1,0 +1,9 @@
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run test
+        run: node code.test.js
