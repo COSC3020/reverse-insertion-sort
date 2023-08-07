@@ -16,14 +16,14 @@ function insertionSort(arr) {
 }
 ```
 
-Write a function that tests this code, i.e. calls the function with an unsorted
-array of numbers and checks that it is sorted afterwards.
-
-Now change the function such that it works from the end of the array rather than
+Change this function such that it works from the end of the array rather than
 the beginning, `insertionSortReverse()` -- only the direction of
 iterating over the elements is reversed, the array is still sorted the same way
-(ascending). Test your new function; I've provided some basic testing code that
-uses [jsverify](https://jsverify.github.io/).
+(ascending). Add your code in `code.js`. Test your new function; I've provided
+some basic testing code that uses [jsverify](https://jsverify.github.io/) in
+`code.test.js`.
+
+![Test](https://github.com/COSC3020/reverse-insertion-sort/actions/workflows/test/badge.svg)
 
 ## Average-Case Time Complexity of Insertion Sort
 

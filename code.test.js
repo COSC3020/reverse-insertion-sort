@@ -12,4 +12,4 @@ const testSort =
                 { return a - b; }));
     });
 
-jsc.check(testSort);
+jsc.assert(testSort);
