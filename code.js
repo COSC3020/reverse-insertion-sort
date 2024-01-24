@@ -3,47 +3,54 @@
 
 // only differnece is this iterates right to left.
 function insertionSortReverse(array) {
-    console.log(array);
-    // Must also include the 0 index
-    for (var i = array.length - 1; i >= 0; i-- ){
+    // check for empty
+    if (array.length == 0){
+        // revist why this isn't caught by second part?
+        return [];
+    }
+    // Start the loop from the second-to-last element 
+    // (index n - 2) and move towards the beginning
+    // Must also include the 0 index!!!!
+    for (var i = array.length - 2; i >= 0; i-- ){
         var val = array[i];
-        // A binary search would be effective here as mentioned in lecture
-        // J represents the appropriate INDEX for the replacement
-        var j = binary_search(array, val, 0, i); // are moving window shifts to the left
-        // README: I read up on the splice operator because it was mentioned
-        //         In class and I'm in too deep now with trying to make this fast
-        //         Honestly, it is very nice for readability and I assumed faster than
-        //         what would otherwise be a for loop. Unfortunately I couldn't get it to work
-        //         without skipping the last index.
-        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+        var j = i + 1;
+        // Move elements of arr[i+1..length-1] that are greater than val (current value of index i)
+        // to one position ahead of their current position
+        // I attempted Binary Search but couldn't get it to work for swaps that required
+        // Traversal greater than one posistion AND with repeat values ex:[1, 0, 0]
+        while (j < array.length && array[j] < val) {
+            array[j - 1] = array[j];
+            j++;
+        }
+  
+        // Place the current value at its correct position
+        array[j - 1] = val;
+    }
 
+        // README: I read up on the splice operator because
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
         // inserts at index j with val, and shifts other values appropriately
-        // Doesn't ovewrite the index specified.
+        // Doesn't overite the index specified.
         // array.splice(j,0,val)
         // remove original index of the value 
         // which was shifted write when inserting it in the correct possition.
         // array.splice(i+1,1)
 
-        // Shift elements to the right, excluding the current value
-        for (var k = i; k > j; k--) {
-            array[k] = array[k - 1];
-        }
-
-        // Insert the value at index j
-        array[j] = val;
+        return array;
     }
-    console.log("sorted: ", array)
-    return array;
 
-}
+//[Running] node "/home/tyson/Documents/Cosc3020/reverse-insertion-sort/code.test.js"
+//[Done] exited with code=0 in 0.049 seconds
 
-
+    
+/*
+// No Binary Search doesn't work with empty arrays
 // For sake of clarity let's use a helper function
 function binary_search(arr, val, beg, end){
-    var middle = (beg + end) >> 1;  // bit shift right for faster divide by 2
+    var middle = beg + end >> 1;  // bit shift right for faster divide by 2
     // base case
     if (beg > end){
-        return beg;
+        return start;
     }
     // RECURSIVE CASE
     // if middle is the val, return middle
@@ -53,12 +60,12 @@ function binary_search(arr, val, beg, end){
     else if (arr[middle] < val){
         // when middle is less than the target value:
         //  the search range is updated to right half of the current range
-        return binary_search(arr, val, middle + 1, end);
+        binary_search(arr, val, mid +1, end);
     }
     else{
         // when middle element is greater than the target value:
         //  the search range is updated to left half of the current range
-        return binary_search(arr, val, beg, middle - 1);
-    } 
-
+        binary_search(arr, val, start, mid -1);
+    }
 }
+*/
