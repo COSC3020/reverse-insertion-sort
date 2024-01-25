@@ -9,7 +9,7 @@ function insertionSortReverse(array) {
         return [];
     }
     // Start the loop from the second-to-last element 
-    // (index n - 2) and move towards the beginning
+    // (index array.length - 2) and move towards the beginning (starting at end)
     // Must also include the 0 index!!!!
     for (var i = array.length - 2; i >= 0; i-- ){
         var val = array[i];
