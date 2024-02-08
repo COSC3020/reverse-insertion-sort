@@ -16,7 +16,7 @@ function insertionSort(arr) {
 }
 ```
 
-Change this function such that it workinsertionSortReverse()s from the end of the array rather than
+Change this function such that it works from the end of the array rather than
 the beginning, `` -- only the direction of
 iterating over the elements is reversed, the array is still sorted the same way
 (ascending). Add your code in `code.js`. Test your new function; I've provided
