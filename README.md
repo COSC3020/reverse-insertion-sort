@@ -29,10 +29,10 @@ In the lectures, we covered that insertion sort has best-case time complexity of
 $\Theta(n)$ and worst-case time complexity of $\Theta(n^2)$. What is the
 average-case time complexity ($\Theta$)?
 
-Hint: Think about what happens in each iteration of the loop, and how often the
-loop is executed. Keep in mind that for asymptotic analysis we don't care about
-constant factors.
+1) The Outer loop always iterates $\Theta(n)$ times regardless of other factors.
 
-Describe your reasoning and the conclusion you've come to. Your reasoning is
-most important -- you can easily find the answer, but you need to demonstrate
-that you've understood the concept. Add your answer to this markdown file.
+2) The secondary loop will compare the current element with every previous element as the sorted section of the list grows. This may also require a swap with all previous elements.
+This makes sense given your extremes are either no swaps or all swaps, between the best and worst cases.
+
+3) The combination of outer loop and inner loop makes the average complexity as $\Theta(n^2)$.
+A binary search instead of a linear probe could make the inner loop better for its worst case making, but without additional analysis I find it difficult to beleive it would improve the average time complexity by much when factoring in handling edge cases like empty sets.
