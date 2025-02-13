@@ -1,3 +1,4 @@
-// eslint-disable-next-line no-unused-varsfunction insertionSortReverse(array) {
+// eslint-disable-next-line no-unused-vars
+function insertionSortReverse(array) {
     return array;
 }
